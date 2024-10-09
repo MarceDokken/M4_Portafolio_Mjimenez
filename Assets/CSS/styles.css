@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.background-container {
+  background-image: url("../IMG/City\ of\ Tears\ -\ Background.jpg"); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;  
+}
+
+.content-container {
+  height: 100%;
+  width: 100%;
+}
+
+.geoMoney__box {
+  top: 100px;
+  left: 200px;   
+}
+
+.geoMoney__icon {
+  width: 40px;
+}
+
+.geoMoney__counter {
+  max-width: 200px;
+}
+
+.song-icon {
+  max-width: 200px;
+  max-height: 100px;
+}
+
+.slyshop__banner {
+  height: 14vh;  
+}
+
+.slyshop__list{
+height: 600px;
+overflow-y: auto;
+}
+
+.custom__opacity{
+  opacity: 0.85;
+}
+
+
+/* Scroll Bar, custom*/
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 10px;
+  border: 3px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0d6efd;
+}
+
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+/* Dialogo de Sly */
+
+.sly__dialog {
+  position: absolute;
+  bottom: 18%;
+  left: 40%;
+  transform: translateX(-50%);
+  padding: 10px 8px;
+  border-radius: 10%;  
+  max-width: 250px;  
+}
+
+.sly__dialog:after {
+  content: '';
+  position: absolute;
+  bottom: -33px;
+  left: 50%;
+  transform: translateX(-120%);
+  border-width: 15px;
+  border-style: solid;
+  border-color: #f0f0f0 transparent transparent transparent;
+}
+
+.shoppingcart__img-product {
+  max-width: 50px;
+}
+
+.shoppingcart__scroll {
+  max-height: 300px;
+  overflow-y: auto; 
+}

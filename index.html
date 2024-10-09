@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M4_Consolidación - Mjiménez</title>
+  <link rel="stylesheet" href="Assets/CSS/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <main class="background-container">    
+    <section class="container" id="info__modal"></section>
+    <section class="container" id="error__modal"></section>
+    <section class="container" id="final__modal"></section>
+
+<header>
+    <nav class="navbar bg-transparent position-relative">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <img src="Assets/IMG/Health Bar.png" alt="Health Bar" class="ms-n3 img-fluid">
+          <div class="input-group position-absolute geoMoney__box" id="geoBoxContainer">
+            <img src="Assets/IMG/Geo - Money.jpg" alt="" class="img-fluid geoMoney__icon">
+            <input type="text" class="form-control form-control-sm bg-transparent text-white fw-bold fs-2 border-0 geoMoney__counter"  disabled id="geoMoneyContainerBox">
+          </div>
+        </div>
+        <!-- Song Image - Play/Pause  -->
+        <a href="#">
+        <img src="Assets/IMG/Song-Icon.png" id= "playPauseAudio" alt="Your Image" class="song-icon">
+        </a>
+      </div>
+    </nav>
+</header>
+
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Col 1: The Knight -->
+      <div class="col-2 d-flex align-items-end justify-content-end">
+        <img src="Assets/IMG/The Knight.png" alt="Personaje 1" class="img-fluid" style="max-height: 50vh;">
+      </div>
+
+      <!-- Col 2: Sly Shop Container -->
+      <div class="col-4">
+        <div class="container-fluid d-flex justify-content-start custom__opacity border border-5 border-light rounded px-0 py-0" style="box-sizing: border-box;">
+          <div class="card bg-black">
+            <img src="Assets/IMG/Sly Shop Banner.jpg" class="card-img-top slyshop__banner mb-2" alt="...">
+
+      <!-- Sly Shop Item List-->
+            <div class="slyshop__list">
+              <ul class="list-group list-group-flush">
+                <!-- Producto 1-->
+                <li class="list-group-item bg-dark text-white border-secondary">
+                  <div class="row align-items-center">
+                    <div class="col-2">
+                      <img src="Assets/IMG/Items - Shop/Simple_Key.jpg" alt="Producto 1" class="img-fluid" id="productImg1">
+                    </div>
+                    <div class="col-3 d-flex align-items-center">
+                      <p class="fw-bold fs-5 mb-0" id="productName1">Llave simple</p> 
+                    </div>
+                    <div class="col-3">
+                      <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0">
+                          <img src="Assets/IMG/Geo - Money.jpg" alt="Geo Icon" class="img-fluid geoMoney__icon">
+                        </span>
+                        <input type="text" class="form-control bg-dark text-white border-0 fs-5" value="950" aria-label="Precio" id="productPrice1" readonly>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <input type="number" class="form-control bg-dark text-white fs-5" placeholder="Cantidad" min="1" id="productAmount1">
+                    </div>
+                    <div class="col-2">
+                      <button type="button" class="btn btn-primary" onclick="getValue('productAmount1',1)">Agregar</button>
+                    </div>
+                  </div>
+                </li>
+                <!-- Producto 2-->
+                <li class="list-group-item bg-dark text-white border-secondary">
+                  <div class="row align-items-center">
+                    <div class="col-2">
+                      <img src="Assets/IMG/Items - Shop/Gathering_Swarm.jpg" alt="Producto 2" class="img-fluid" id="productImg2">
+                    </div>
+                    <div class="col-3 d-flex align-items-center">
+                      <p class="fw-bold fs-5 mb-0" id="productName2">Enjambre recolector</p> 
+                    </div>
+                    <div class="col-3">
+                      <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0">
+                          <img src="Assets/IMG/Geo - Money.jpg" alt="Geo Icon" class="img-fluid geoMoney__icon">
+                        </span>
+                        <input type="text" class="form-control bg-dark text-white border-0 fs-5" value="300" aria-label="Precio" id="productPrice2" readonly>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <input type="number" class="form-control bg-dark text-white fs-5" placeholder="Cantidad" min="1" id="productAmount2" >
+                    </div>
+                    <div class="col-2">
+                      <button type="button" class="btn btn-primary"  onclick="getValue('productAmount2',2)">Agregar</button>
+                    </div>
+                  </div>
+                </li>
+                <!-- Producto 3-->
+                <li class="list-group-item bg-dark text-white border-secondary">
+                  <div class="row align-items-center">
+                    <div class="col-2">
+                      <img src="Assets/IMG/Items - Shop/Stalwart_Shell.jpg" alt="Producto 3" class="img-fluid">
+                    </div>
+                    <div class="col-3 d-flex align-items-center">
+                      <p class="fw-bold fs-5 mb-0">Coraza robusta</p> 
+                    </div>
+                    <div class="col-3">
+                      <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0">
+                          <img src="Assets/IMG/Geo - Money.jpg" alt="Geo Icon" class="img-fluid geoMoney__icon">
+                        </span>
+                        <input type="text" class="form-control bg-dark text-white border-0 fs-5" value="200" aria-label="Precio" readonly>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <input type="number" class="form-control bg-dark text-white fs-5" placeholder="Cantidad" min="1" id="productAmount3">
+                    </div>
+                    <div class="col-2">
+                      <button type="button" class="btn btn-primary" onclick="getValue('productAmount3',3)">Agregar</button>
+                    </div>
+                  </div>
+                </li>
+                <!-- Producto 4-->
+                <li class="list-group-item bg-dark text-white border-secondary">
+                  <div class="row align-items-center">
+                    <div class="col-2">
+                      <img src="Assets/IMG/Items - Shop/Lumafly_Lantern.jpg" alt="Producto 4" class="img-fluid">
+                    </div>
+                    <div class="col-3 d-flex align-items-center">
+                      <p class="fw-bold fs-5 mb-0">Linterna de lumélula</p> 
+                    </div>
+                    <div class="col-3">
+                      <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0">
+                          <img src="Assets/IMG/Geo - Money.jpg" alt="Geo Icon" class="img-fluid geoMoney__icon">
+                        </span>
+                        <input type="text" class="form-control bg-dark text-white border-0 fs-5" value="1800" aria-label="Precio" readonly>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <input type="number" class="form-control bg-dark text-white fs-5" placeholder="Cantidad" min="1" id="productAmount4">
+                    </div>
+                    <div class="col-2">
+                      <button type="button" class="btn btn-primary" onclick="getValue('productAmount4',4)" >Agregar</button>
+                    </div>
+                  </div>
+                </li>
+                <!-- Producto 5-->
+                <li class="list-group-item bg-dark text-white border-secondary">
+                  <div class="row align-items-center">
+                    <div class="col-2">
+                      <img src="Assets/IMG/Items - Shop/Rancid_Egg.jpg" alt="Producto 5" class="img-fluid">
+                    </div>
+                    <div class="col-3 d-flex align-items-center">
+                      <p class="fw-bold fs-5 mb-0">Huevo podrido</p> 
+                    </div>
+                    <div class="col-3">
+                      <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0">
+                          <img src="Assets/IMG/Geo - Money.jpg" alt="Geo Icon" class="img-fluid geoMoney__icon">
+                        </span>
+                        <input type="text" class="form-control bg-dark text-white border-0 fs-5" value="60" aria-label="Precio" readonly>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <input type="number" class="form-control bg-dark text-white fs-5" placeholder="Cantidad" min="1" id="productAmount5">
+                    </div>
+                    <div class="col-2">
+                      <button type="button" class="btn btn-primary" onclick="getValue('productAmount5',5)">Agregar</button>
+                    </div>
+                  </div>
+                </li>
+                <!-- Producto 6-->
+                <li class="list-group-item bg-dark text-white border-secondary">
+                  <div class="row align-items-center">
+                    <div class="col-2">
+                      <img src="Assets/IMG/Items - Shop/Heavy_Blow.jpg" alt="Producto 6" class="img-fluid">
+                    </div>
+                    <div class="col-3 d-flex align-items-center">
+                      <p class="fw-bold fs-5 mb-0">Golpe duro</p> 
+                    </div>
+                    <div class="col-3">
+                      <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0">
+                          <img src="Assets/IMG/Geo - Money.jpg" alt="Geo Icon" class="img-fluid geoMoney__icon">
+                        </span>
+                        <input type="text" class="form-control bg-dark text-white border-0 fs-5" value="350" aria-label="Precio" readonly>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <input type="number" class="form-control bg-dark text-white fs-5" placeholder="Cantidad" min="1" id="productAmount6">
+                    </div>
+                    <div class="col-2">
+                      <button type="button" class="btn btn-primary" onclick="getValue('productAmount6',6)" >Agregar</button>
+                    </div>
+                  </div>
+                </li>
+                <!-- Producto 7-->
+                <li class="list-group-item bg-dark text-white border-secondary">
+                  <div class="row align-items-center">
+                    <div class="col-2">
+                      <img src="Assets/IMG/Items - Shop/Elegant_Key.jpg" alt="Producto 7" class="img-fluid">
+                    </div>
+                    <div class="col-3 d-flex align-items-center">
+                      <p class="fw-bold fs-5 mb-0">Llave elegante</p> 
+                    </div>
+                    <div class="col-3">
+                      <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0">
+                          <img src="Assets/IMG/Geo - Money.jpg" alt="Geo Icon" class="img-fluid geoMoney__icon">
+                        </span>
+                        <input type="text" class="form-control bg-dark text-white border-0 fs-5" value="800" aria-label="Precio" readonly>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <input type="number" class="form-control bg-dark text-white fs-5" placeholder="Cantidad" min="1" id="productAmount7" id="productAmount7">
+                    </div>
+                    <div class="col-2">
+                      <button type="button" class="btn btn-primary" onclick="getValue('productAmount7',7)">Agregar</button>
+                    </div>
+                  </div>
+                </li>
+                <!-- Producto 8-->
+                <li class="list-group-item bg-dark text-white border-secondary">
+                  <div class="row align-items-center">
+                    <div class="col-2">
+                      <img src="Assets/IMG/Items - Shop/Health_Piecea.png" alt="Producto 8" class="img-fluid">
+                    </div>
+                    <div class="col-3 d-flex align-items-center">
+                      <p class="fw-bold fs-5 mb-0">Fragmento de máscara</p> 
+                    </div>
+                    <div class="col-3">
+                      <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0">
+                          <img src="Assets/IMG/Geo - Money.jpg" alt="Geo Icon" class="img-fluid geoMoney__icon">
+                        </span>
+                        <input type="text" class="form-control bg-dark text-white border-0 fs-5" value="150" aria-label="Precio" readonly>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <input type="number" class="form-control bg-dark text-white fs-5" placeholder="Cantidad" min="1" id="productAmount8">
+                    </div>
+                    <div class="col-2">
+                      <button type="button" class="btn btn-primary" onclick="getValue('productAmount8',8)">Agregar</button>
+                    </div>
+                  </div>
+                </li>
+                <!-- Producto 9-->
+                <li class="list-group-item bg-dark text-white border-secondary">
+                  <div class="row align-items-center">
+                    <div class="col-2">
+                      <img src="Assets/IMG/Items - Shop/Vessel_Fragmenta.png" alt="Producto 9" class="img-fluid">
+                    </div>
+                    <div class="col-3 d-flex align-items-center">
+                      <p class="fw-bold fs-5 mb-0">Fragmento de vasija</p> 
+                    </div>
+                    <div class="col-3">
+                      <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0">
+                          <img src="Assets/IMG/Geo - Money.jpg" alt="Geo Icon" class="img-fluid geoMoney__icon">
+                        </span>
+                        <input type="text" class="form-control bg-dark text-white border-0 fs-5" value="550" aria-label="Precio" readonly>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <input type="number" class="form-control bg-dark text-white fs-5" placeholder="Cantidad" min="1" id="productAmount9">
+                    </div>
+                    <div class="col-2">
+                      <button type="button" class="btn btn-primary" onclick="getValue('productAmount9',9)">Agregar</button>
+                    </div>
+                  </div>
+                </li>
+                <!-- Producto 10-->
+                <li class="list-group-item bg-dark text-white border-secondary">
+                  <div class="row align-items-center">
+                    <div class="col-2">
+                      <img src="Assets/IMG/Items - Shop/Sprintmaster.jpg" alt="Producto 10" class="img-fluid">
+                    </div>
+                    <div class="col-3 d-flex align-items-center">
+                      <p class="fw-bold fs-5 mb-0">Maestro de sprints</p> 
+                    </div>
+                    <div class="col-3">
+                      <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0">
+                          <img src="Assets/IMG/Geo - Money.jpg" alt="Geo Icon" class="img-fluid geoMoney__icon">
+                        </span>
+                        <input type="text" class="form-control bg-dark text-white border-0 fs-5" value="400" aria-label="Precio" readonly>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <input type="number" class="form-control bg-dark text-white fs-5" placeholder="Cantidad" min="1" id="productAmount10">
+                    </div>
+                    <div class="col-2">
+                      <button type="button" class="btn btn-primary" onclick="getValue('productAmount10',10)">Agregar</button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+             </div>
+            <div class="card-body">
+              <img src="Assets/IMG/Sly Shop Footer.jpg" class="card-img-top slyshop__footer mb-2" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 3: Sly Vendor -->
+      <div class="col-2 d-flex align-items-end position-relative">
+        <img src="Assets/IMG/Sly.jpg" alt="Vendedor" class="img-fluid" style="max-height: 50vh;">
+        <div class="sly__dialog text-white bg-dark border border-3">
+          <p>¡Ah, hola! Sabía que volveríamos a vernos. ¿Que te parece mi acogedora tiendecita? Me he acomodado bastante por aquí, vendiendo baratijas a viajeros como tú.</p>
+        </div>
+      </div>
+
+
+<!-- Col 4: Shop Car -->
+<div class="col-4">
+  <div class="card text-white border border-4 border-light rounded px-0 py-0 custom__opacity">
+   <div class="card-body bg-black text-center">
+      <h3>Carrito de Compras - Sly Shop</h3>
+    </div>
+    <div class="card-body bg-dark">
+      <div id="shoppingcartScroll" class="shoppingcart__scroll">
+        <table class="table table-dark mb-0 shoppingcart__table">
+          <thead>
+            <tr>
+              <th scope="col" class="text-center">Producto</th>
+              <th scope="col" class="text-center">Nombre</th>
+              <th scope="col" class="text-center">Cantidad</th>
+              <th scope="col" class="text-center">Total Acumulado</th>
+              <th scope="col" class="text-center">Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="shoppingcart__container">
+            <!-- Aquí inyectaré desde JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Tercer bloque: Botones -->
+    <div class="card-body bg-black">
+      <div class="mt-3">
+         <!-- Aquí se inyectará la cantidad desde JS -->
+        <button class="btn btn-secondary w-100 mb-2">Total: <span id="totalAmount"  class="fw-bold"></span></button>
+      </div>
+      <div>
+        <button id="finalizePurchaseButton" class="btn btn-primary w-100">Finalizar Compra</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<section>
+  
+</section>
+
+
+
+    
+    
+
+
+
+
+  
+   
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+  <script src="Assets/JS/script.js"></script>
+</body>
+</html>
