@@ -1,5 +1,5 @@
 // Apartado de Modal de Bienvenida 
-/*
+
 const modalBienvenida = `
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -66,7 +66,7 @@ geoButtonSubmit.addEventListener('click', function () {
   }
 });
 
-*/
+
 
 // Apartado del Boton de Musica
 
